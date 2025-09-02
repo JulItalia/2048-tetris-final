@@ -1,0 +1,91 @@
+:root {
+  --board-width: 480px;
+  --board-height: 600px;
+  --cell-size: 120px;
+  --tile-border: 5px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background: #faf8ef;
+  margin: 0;
+  padding: 24px 0 48px;
+}
+
+#board {
+  width: var(--board-width);
+  height: var(--board-height);
+  background-color: #cdc1b5;
+  border: 6px solid #bbada0;
+  margin: 16px auto;
+  position: relative;
+  border-radius: 10px;
+}
+
+.tile {
+  width: 110px;
+  height: 110px;
+  font-size: 48px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--tile-border) solid #bbada0;
+  border-radius: 10px;
+  position: absolute;
+  transition: transform 0.1s linear;
+}
+
+.tile.pop {
+  animation: pop 0.2s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Colores */
+.x2 { background:#eee4da; color:#727371; }
+.x4 { background:#ece0ca; color:#727371; }
+.x8 { background:#f4b17a; color:#fff; }
+.x16 { background:#f59575; color:#fff; }
+.x32 { background:#f57c5f; color:#fff; }
+.x64 { background:#f65d3b; color:#fff; }
+.x128 { background:#edce71; color:#fff; }
+.x256 { background:#edcc63; color:#fff; }
+.x512 { background:#edc651; color:#fff; }
+.x1024 { background:#eec744; color:#fff; }
+.x2048 { background:#ecc230; color:#fff; }
+.x4096 { background:#fe3d3d; color:#fff; }
+.x8192 { background:#ff2020; color:#fff; }
+
+.overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: grid; place-items: center;
+  z-index: 10;
+}
+.hidden { display: none; }
+
+.modal {
+  background: #fff;
+  padding: 24px 28px;
+  border-radius: 12px;
+  width: min(90%, 420px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+.modal h2 { margin: 0 0 8px; }
+.modal p { margin: 0 0 16px; color: #333; }
+.modal button {
+  border: none; background: #6c5ce7; color: #fff;
+  padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight: 700;
+}
+.modal button:hover { filter: brightness(1.05); }
+
+.pop {
+  transform: scale(1.2);
+  transition: transform 0.2s;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tetris 2048</title>
+<link rel="stylesheet" href="2048.css">
+<script src="2048.js" defer></script>
+</head>
+<body>
+  <h1>Tetris 2048</h1>
+  <hr>
+  <h2>Puntaje: <span id="score">0</span></h2>
+
+  <!-- Selección de dificultad -->
+  <label for="difficulty">Dificultad:</label>
+  <select id="difficulty">
+    <option value="easy">Fácil</option>
+    <option value="medium">Media</option>
+    <option value="hard">Difícil</option>
+    <option value="expert" selected>Experto</option>
+  </select>
+  <span id="currentDiff">Experto</span>
+
+  <!-- Botón de música -->
+  <button id="musicBtn">🔊 Música</button>
+
+  <div id="board"></div>
+
+  <!-- Botón resumen -->
+  <button id="summaryBtn">Resumen de partida</button>
+
+  <!-- Música de fondo -->
+  <audio id="bg-music" src="musica.mp3" loop></audio>
+
+  <!-- Overlay fin de juego -->
+  <div id="overlay" class="overlay hidden">
+    <div class="modal">
+      <h2 id="endTitle"></h2>
+      <p id="endMessage"></p>
+      <button id="restartBtn">Reiniciar</button>
+    </div>
+  </div>
+</body>
+</html>
